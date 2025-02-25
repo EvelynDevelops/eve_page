@@ -39,10 +39,10 @@ export default function Home() {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <div className="bg-white dark:bg-gray-800">
+    <div className="bg-white dark:bg-gray-800 ">
       <div className="h-auto  text-black flex flex-col-2 md:flex-row items-center justify-center px-48 py-20">
         
-        {/* Person Information */}
+        {/* Left-side Person Information */}
         <div className="md:w-4/5 text-center md:text-left">
           <h1 className="text-5xl font-bold">Hi, I'm Evelyn</h1>
           <h2 className="text-3xl font-medium text-gray-600 mt-2">&lt;{text}|&gt;</h2>
@@ -72,15 +72,35 @@ export default function Home() {
           </div>
         </div>
         
-
-        {/* Profile photo */}
+        {/* Right side - Profile photo */}
         <div className="w-64 aspect-square rounded-full overflow-hidden border-4 border-gray-300 shadow-md">
           <img src="/images/profile.jpg" alt="avatar" className="w-full h-full rounded-full border-4 border-gray-300 shadow-md object-cover"/>
         </div>
-
-        {/* skills */}
       </div>
 
+      {/* About Me Section */}
+      <div className="bg-gray-100 dark:bg-gray-900 py-20 px-10 md:px-48 text-black dark:text-white">
+        <h2 className="text-4xl font-bold text-center md:text-left mb-6">About Me</h2>
+        <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+          I am a dedicated and passionate software engineer with a keen interest in modern web development. 
+          I have experience in building scalable applications, optimizing performance, and creating user-friendly experiences.
+          My journey in tech has allowed me to work on diverse projects, ranging from front-end UI/UX development to full-stack solutions.
+        </p>
+
+        {/* Skills */}
+        <h3 className="text-2xl font-semibold mt-8">Skills & Technologies</h3>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">React</span>
+          <span className="bg-gray-700 text-white px-4 py-2 rounded-full text-sm font-semibold">Next.js</span>
+          <span className="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-semibold">JavaScript</span>
+          <span className="bg-blue-800 text-white px-4 py-2 rounded-full text-sm font-semibold">TypeScript</span>
+          <span className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Node.js</span>
+          <span className="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Tailwind CSS</span>
+          <span className="bg-indigo-500 text-white px-4 py-2 rounded-full text-sm font-semibold">GraphQL</span>
+          <span className="bg-gray-600 text-white px-4 py-2 rounded-full text-sm font-semibold">MongoDB</span>
+          <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">PostgreSQL</span>
+        </div>
+      </div>
     </div>
   );
 }
