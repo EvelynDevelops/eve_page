@@ -28,18 +28,19 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {/* top nav bar */}
-        <nav className="flex justify-between items-center px-40 py-2 shadow-md border">
+        <nav className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md z-50 px-64 py-2 flex justify-between items-center">
           {/* Logo */}
-          {/* <Image src="/images/profile.jpg" alt="avatar" width={50} height={50} className="rounded-full w-12 h-12"/> */}
-          <a className="text-gray-700 font-bold text-2xl"> EVE </a>
-          {/* link to other page */}
-          <div className="space-x-6">
-            <Link href="/" className="text-gray-700 font-semibold text-lg hover:text-black">Home</Link>
-            <Link href="/blog" className="text-gray-700 font-semibold text-lg hover:text-black">Blog</Link>
-            <Link href="/project" className="text-gray-700 font-semibold text-lg hover:text-black">Project</Link>
-            <Link href="/contact" className="text-gray-700 font-semibold  text-lg hover:text-black">Contact</Link>
+          <h1 className="text-2xl font-bold">EVE</h1>
+
+          {/* Navigation Links */}
+          <div className="flex space-x-8">
+            <a href="#" className="font-semibold text-gray-700 hover:text-black">Home</a>
+            <a href="#" className="font-semibold text-gray-700 hover:text-black">Blog</a>
+            <a href="#" className="font-semibold text-gray-700 hover:text-black">Project</a>
+            <a href="#" className="font-semibold text-gray-700 hover:text-black">Contact</a>
           </div>
         </nav>
+
 
         {/* mian contant */}
         <main>{children}</main>
