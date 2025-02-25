@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Skills from "@/components/skills"
 
 export default function Home() {
   const words = ["Software Engineer", "Developer"];
@@ -71,7 +72,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        
+
         {/* Right side - Profile photo */}
         <div className="w-64 aspect-square rounded-full overflow-hidden border-4 border-gray-300 shadow-md">
           <img src="/images/profile.jpg" alt="avatar" className="w-full h-full rounded-full border-4 border-gray-300 shadow-md object-cover"/>
@@ -88,19 +89,10 @@ export default function Home() {
         </p>
 
         {/* Skills */}
-        <h3 className="text-2xl font-semibold mt-8">Skills & Technologies</h3>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <span className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold">React</span>
-          <span className="bg-gray-700 text-white px-4 py-2 rounded-full text-sm font-semibold">Next.js</span>
-          <span className="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-semibold">JavaScript</span>
-          <span className="bg-blue-800 text-white px-4 py-2 rounded-full text-sm font-semibold">TypeScript</span>
-          <span className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Node.js</span>
-          <span className="bg-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Tailwind CSS</span>
-          <span className="bg-indigo-500 text-white px-4 py-2 rounded-full text-sm font-semibold">GraphQL</span>
-          <span className="bg-gray-600 text-white px-4 py-2 rounded-full text-sm font-semibold">MongoDB</span>
-          <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">PostgreSQL</span>
-        </div>
       </div>
+
+
+      <Skills />
     </div>
   );
 }
