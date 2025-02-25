@@ -41,7 +41,6 @@ export default function RootLayout({
           </div>
         </nav>
 
-
         {/* mian contant */}
         <main>{children}</main>
       </body>
