@@ -74,39 +74,43 @@ export default function Home() {
         </div>
 
         {/* Right side - Profile photo */}
-        <div className="w-64 aspect-square rounded-full overflow-hidden border-4 border-gray-300 shadow-md">
+        <div className="md:w-2/5 aspect-square rounded-full overflow-hidden border-5 border-gray-300 shadow-md">
           <img src="/images/profile.jpg" alt="avatar" className="w-full h-full rounded-full border-4 border-gray-300 shadow-md object-cover"/>
         </div>
       </div>
 
       {/* About Me Section */}
-      <div className="bg-gray-100 dark:bg-gray-900 py-20 px-10 md:px-48 text-black dark:text-white">
-        <h2 className="text-4xl font-bold text-center md:text-left mb-6">About Me</h2>
+      <div className="bg-gray-100 dark:bg-gray-900 flex flex-col-2 py-20 px-10 md:px-48 text-black dark:text-white">
 
-        <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-          I am a passionate <span className="font-semibold">software engineer</span> with a strong focus on building <span className="font-semibold">scalable, efficient, and user-friendly applications</span>. 
-          I thrive in both frontend and full-stack development, bringing creativity and technical excellence to every project.  
-        </p>
+        <div className="md:w-2/3 text-center md:text-left">
+          <h2 className="text-4xl font-bold text-center md:text-left mb-6">About Me</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+            I am a passionate <span className="font-semibold">software engineer</span> with a strong focus on building <span className="font-semibold">scalable, efficient, and user-friendly applications</span>. 
+            I thrive in both frontend and full-stack development, bringing creativity and technical excellence to every project.  
+          </p>
 
-        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-          My approach to work is simple: <span className="italic">"Write clean code, solve real problems, and never stop learning."</span>  
-          I enjoy working with modern technologies like <span className="font-semibold">React, Next.js, TypeScript, and Node.js</span>, ensuring that every product I build is both robust and elegant.
-        </p>
+          <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+            My approach to work is simple: <span className="italic">"Write clean code, solve real problems, and never stop learning."</span>  
+            I enjoy working with modern technologies like <span className="font-semibold">React, Next.js, TypeScript, and Node.js</span>, ensuring that every product I build is both robust and elegant.
+          </p>
 
-        {/* 生活方式 */}
-        <h3 className="text-2xl font-semibold mt-8">Beyond Coding</h3>
-        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-          While I love crafting digital experiences, I believe in maintaining a <span className="font-semibold">work-life balance</span>.  
-          Outside of programming, I am an <span className="font-semibold">ultimate frisbee player</span>, constantly pushing my limits on the field.  
-          Ultimate frisbee teaches me teamwork, strategy, and adaptability—skills that seamlessly translate into my engineering mindset.
-        </p>
+          {/* live style */}
+          <h3 className="text-2xl font-semibold mt-8">Beyond Coding</h3>
+          <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+            While I love crafting digital experiences, I believe in maintaining a <span className="font-semibold">work-life balance</span>.  
+            Outside of programming, I am an ultimate frisbee player, constantly pushing my limits on the field.  
+            Ultimate frisbee teaches me teamwork, strategy, and adaptability—skills that seamlessly translate into my engineering mindset.
+          </p>
+        </div>
+
+        <div className="md:w-1/3 mt-16 ml-16">
+          {/* Skills */}
+          <Skills />
+        </div>
       </div>
 
 
 
-
-    {/* Skills */}
-      <Skills />
     </div>
   );
 }
