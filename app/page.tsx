@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div className="bg-white dark:bg-gray-800 ">
-      <div className="h-auto text-black flex flex-col-2 md:flex-row items-center justify-center px-48 py-20 mt-48">
+      <div className="h-auto text-black flex flex-col-2 md:flex-row items-center justify-center px-48 py-20 mt-36">
         
         {/* Left-side Person Information */}
         <div className="md:w-4/5 text-center md:text-left">
@@ -82,12 +82,28 @@ export default function Home() {
       {/* About Me Section */}
       <div className="bg-gray-100 dark:bg-gray-900 py-20 px-10 md:px-48 text-black dark:text-white">
         <h2 className="text-4xl font-bold text-center md:text-left mb-6">About Me</h2>
+
         <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
-          I am a dedicated and passionate software engineer with a keen interest in modern web development. 
-          I have experience in building scalable applications, optimizing performance, and creating user-friendly experiences.
-          My journey in tech has allowed me to work on diverse projects, ranging from front-end UI/UX development to full-stack solutions.
+          I am a passionate <span className="font-semibold">software engineer</span> with a strong focus on building <span className="font-semibold">scalable, efficient, and user-friendly applications</span>. 
+          I thrive in both frontend and full-stack development, bringing creativity and technical excellence to every project.  
+        </p>
+
+        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+          My approach to work is simple: <span className="italic">"Write clean code, solve real problems, and never stop learning."</span>  
+          I enjoy working with modern technologies like <span className="font-semibold">React, Next.js, TypeScript, and Node.js</span>, ensuring that every product I build is both robust and elegant.
+        </p>
+
+        {/* 生活方式 */}
+        <h3 className="text-2xl font-semibold mt-8">Beyond Coding</h3>
+        <p className="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl">
+          While I love crafting digital experiences, I believe in maintaining a <span className="font-semibold">work-life balance</span>.  
+          Outside of programming, I am an <span className="font-semibold">ultimate frisbee player</span>, constantly pushing my limits on the field.  
+          Ultimate frisbee teaches me teamwork, strategy, and adaptability—skills that seamlessly translate into my engineering mindset.
         </p>
       </div>
+
+
+
 
     {/* Skills */}
       <Skills />
