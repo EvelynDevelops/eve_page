@@ -41,14 +41,14 @@ export default function Home() {
 
   return (
     <div className="bg-white dark:bg-gray-800 ">
-      <div className="h-auto  text-black flex flex-col-2 md:flex-row items-center justify-center px-48 py-20">
+      <div className="h-auto text-black flex flex-col-2 md:flex-row items-center justify-center px-48 py-20 mt-48">
         
         {/* Left-side Person Information */}
         <div className="md:w-4/5 text-center md:text-left">
           <h1 className="text-5xl font-bold">Hi, I'm Evelyn</h1>
-          <h2 className="text-3xl font-medium text-gray-600 mt-2">&lt;{text}|&gt;</h2>
+          <h2 className="text-3xl font-medium text-gray-600 mt-2 mt-6">&lt;{text}|&gt;</h2>
 
-          <div className="mt-4 space-x-2">
+          <div className="mt-4 space-x-2 mt-6">
             <span className="text-blue-500 font-semibold">#Freelancer</span>
             <span className="text-green-500 font-semibold">#Creative Thinker</span>
             <span className="text-purple-500 font-semibold">#Lifelong Learner</span>
@@ -87,11 +87,9 @@ export default function Home() {
           I have experience in building scalable applications, optimizing performance, and creating user-friendly experiences.
           My journey in tech has allowed me to work on diverse projects, ranging from front-end UI/UX development to full-stack solutions.
         </p>
-
-        {/* Skills */}
       </div>
 
-
+    {/* Skills */}
       <Skills />
     </div>
   );
