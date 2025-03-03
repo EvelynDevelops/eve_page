@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Skills from "@/components/skills"
 import Projects from "@/components/Projects";
+import { useMemo } from "react";
+import Image from "next/image";
+
 
 const projects = [
   {
@@ -50,40 +53,40 @@ const projects = [
 ];
 
 export default function Home() {
-  const words = ["Software Engineer", "Developer"];
   const [index, setIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
-  const [delay, setDelay] = useState(150); 
-  const [typingSpeed, setTypingSpeed] = useState(120); 
-  const [deletingSpeed, setDeletingSpeed] = useState(70);
+  const [typingSpeed] = useState(120); 
+  const [deletingSpeed] = useState(70);
+  const memoizedWords = useMemo(() => ["Software Engineer", "Developer"], []);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-
-    if (!isDeleting && charIndex < words[index].length) {
+  
+    if (!isDeleting && charIndex < memoizedWords[index].length) {
       timeout = setTimeout(() => {
-        setText(words[index].substring(0, charIndex + 1));
+        setText(memoizedWords[index].substring(0, charIndex + 1));
         setCharIndex(charIndex + 1);
       }, typingSpeed);
     } else if (isDeleting && charIndex > 0) {
       timeout = setTimeout(() => {
-        setText(words[index].substring(0, charIndex - 1));
+        setText(memoizedWords[index].substring(0, charIndex - 1));
         setCharIndex(charIndex - 1);
       }, deletingSpeed);
     } else {
       if (!isDeleting) {
-        setTimeout(() => setIsDeleting(true), 1000); 
+        timeout = setTimeout(() => setIsDeleting(true), 1000);
       } else {
         setIsDeleting(false);
-        setIndex((prev) => (prev + 1) % words.length); // 0 -> 1 -> 2 -> 0
+        setIndex((prev) => (prev + 1) % memoizedWords.length);
         setCharIndex(0);
       }
     }
-
+  
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, index]);
+  }, [charIndex, isDeleting, index, deletingSpeed, typingSpeed, memoizedWords]);
+  
 
   return (
     <div className="bg-white dark:bg-gray-800 ">
@@ -121,7 +124,8 @@ export default function Home() {
 
         {/* Right side - Profile photo */}
         <div className="md:w-2/5 aspect-square rounded-full overflow-hidden border-5 border-gray-300 shadow-md">
-          <img src="/images/profile.jpg" alt="avatar" className="w-full h-full rounded-full border-4 border-gray-300 shadow-md object-cover"/>
+          {/* <img src="/images/profile.jpg" alt="avatar" className="w-full h-full rounded-full border-4 border-gray-300 shadow-md object-cover"/> */}
+          <Image src="/images/profile.jpg" alt="avatar" width={500} height={300}/>
         </div>
       </div>
 
