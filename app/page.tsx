@@ -7,51 +7,6 @@ import { useMemo } from "react";
 import Image from "next/image";
 
 
-const projects = [
-  {
-    id: "1",
-    title: "My Portfolio",
-    description: "A personal portfolio website showcasing my work.",
-    link: "https://github.com/EvelynDevelops",
-    imageUrl: "/icons/apps/github-dark.svg",
-  },
-  {
-    id: "2",
-    title: "Task Manager",
-    description: "A simple task management app built with Next.js and Tailwind.",
-    link: "https://github.com/EvelynDevelops/task-manager",
-    imageUrl: "/icons/apps/nextjs.svg",
-  },
-  {
-    id: "3",
-    title: "Blog App",
-    description: "A blog application with Markdown support and comments.",
-    link: "https://github.com/EvelynDevelops/blog-app",
-    imageUrl: "/icons/apps/reactjs.svg",
-  },
-  {
-    id: "4",
-    title: "Blog App",
-    description: "A blog application with Markdown support and comments.",
-    link: "https://github.com/EvelynDevelops/blog-app",
-    imageUrl: "/icons/apps/reactjs.svg",
-  },
-  {
-    id: "5",
-    title: "My Portfolio",
-    description: "A personal portfolio website showcasing my work.",
-    link: "https://github.com/EvelynDevelops",
-    imageUrl: "/icons/apps/github-dark.svg",
-  },
-  {
-    id: "6",
-    title: "Task Manager",
-    description: "A simple task management app built with Next.js and Tailwind.",
-    link: "https://github.com/EvelynDevelops/task-manager",
-    imageUrl: "/icons/apps/nextjs.svg",
-  },
-];
-
 export default function Home() {
   const [index, setIndex] = useState(0);
   const [text, setText] = useState("");
@@ -160,10 +115,9 @@ export default function Home() {
       </div>
 
 
-
       <div className="bg-white dark:bg-gray-900 text-black dark:text-white py-20 px-10">
-        <h1 className="text-4xl font-bold text-center md:text-left mb-6 ml-36">Projects</h1>
-        <Projects projects={projects}/>
+        <h1 className="text-4xl font-bold text-center mb-6 mt-4">Project Showcase</h1>
+        <Projects/>
       </div>
 
 
