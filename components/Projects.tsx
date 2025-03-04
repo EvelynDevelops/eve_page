@@ -1,55 +1,110 @@
+"use client"
+
+import React from "react"
+import {
+  Expandable,
+  ExpandableCard,
+  ExpandableCardHeader,
+  ExpandableCardContent,
+  ExpandableCardFooter,
+  ExpandableContent,
+  ExpandableTrigger,
+} from "@/components/ExpandableCard"
 import Image from "next/image";
-import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  link: string;
-  imageUrl: string;
-}
 
-// Props type
-interface ProjectsProps {
-  projects: Project[];
-}
+const projects = [
+    {
+      id: 1,
+      title: "Eve_page",
+      description: "My personal website showcasing my projects, skills, and experience.",
+      details: "A fully responsive site built with Next.js and Tailwind CSS. Includes project showcases, blog posts, and contact form integrations.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "UI/UX Design"],
+      link: "https://evepage.com",
+      image: "/images/eve_page.png",
+    },
+    {
+      id: 2,
+      title: "Social Media ETL Pipeline",
+      description: "An ETL pipeline processing data from platforms like RED note, TikTok, and Weibo.",
+      details: "Built with FastAPI and PostgreSQL. Automates data extraction, transformation, and storage, with scheduled sentiment-based business reports.",
+      technologies: ["FastAPI", "PostgreSQL", "SQLAlchemy", "ETL", "API Integration", "Data Processing"],
+      link: "https://etlproject.com",
+      image: "/images/etl_pipeline.png",
+    },
+    {
+      id: 3,
+      title: "Image-Based Search System",
+      description: "A full-stack image-based search system using a RAG model.",
+      details: "Developed with Next.js, Tailwind CSS, and PostgreSQL. Supports image uploads and retrieves the top-K most relevant results using vector embeddings.",
+      technologies: ["Next.js", "Tailwind CSS", "PostgreSQL", "RAG Model", "Docker", "ORM"],
+      link: "https://imagesearch.com",
+      image: "/images/image_search.png",
+    },
+  ]
+  
+  
+
+  function ProjectCard({ project }: { project: (typeof projects)[0] }) {
+    return (
+      <Expandable
+        expandDirection="horizontal"
+        expandBehavior="push"
+        transitionDuration={0.3}
+        onExpandStart={() => console.log(`start expand: ${project.title}`)}
+        onExpandEnd={() => console.log(`finish expand: ${project.title}`)}
+        onCollapseStart={() => console.log(`start close: ${project.title}`)}
+        onCollapseEnd={() => console.log(`finsh close: ${project.title}`)}
+      >
+    
+        <ExpandableTrigger>
+        <ExpandableCard className="w-full">
+
+            {/* header: project name */}
+            <ExpandableCardHeader className="flex flex-row items-start px-2">
+
+            <Image src="/images/profile.jpg" alt="avatar"
+              className="rounded-full object-cover border mr-5"
+              width={50} height={50}/>
+              <p className="text-lg font-semibold">{project.title}</p>
+            </ExpandableCardHeader>
 
 
-export default function Projects({ projects }: ProjectsProps) {
+  
+            {/* ccontent: expandable contact */}
+            <ExpandableCardContent className="rounded-md flex flex-col">
+              <p className="text-gray-700">{project.description}</p>
+
+              <ExpandableContent preset="slide-up" className="flex flex-col">
+                <p className="mt-2 text-sm text-gray-600">{project.details}</p>
+                <ul className="mt-2 text-sm text-gray-500 space-y-1">
+                  {project.technologies.map((tech) => (
+                    <li key={tech} className="whitespace-nowrap">🔹 {tech}</li>
+                  ))}
+                </ul>
+              </ExpandableContent>
+            </ExpandableCardContent>
+  
+            {/* bottom: */}
+            <ExpandableCardFooter className="flex justify-start space-x-2">
+                <p>{new URL(project.link).host}</p>
+                <ExternalLink className="size-4" />
+            </ExpandableCardFooter>
+          </ExpandableCard>
+        </ExpandableTrigger>
+      </Expandable>
+    )
+  }
+  
+export default function ProjectShowcase() {
   return (
-    <section>
-      <ul className="grid w-full grid-cols-1 gap-4 mx-auto sm:grid-cols-2 xl:grid-cols-3 px-36">
+    <div className="container mx-auto">
+      <div className="flex flex-wrap justify-center gap-4">
         {projects.map((project) => (
-          <li key={project.id}>
-            <Link href={project.link} target="_blank">
-              <div className="relative flex flex-col items-start justify-center gap-6 p-5 border-dashed border-[0.8px] border-black rounded-2xl hover:border-muted-foreground hover:bg-muted">
-                <div className="relative flex items-center justify-center w-12 h-12 shadow-[0_0px_3px_rgb(180,180,180)] rounded-full ">
-                  <Image
-                    src={project.imageUrl}
-                    alt="Project image"
-                    width={36}
-                    height={36}
-                    className="object-contain "
-                  />
-                </div>
-
-                <div>
-                  <h2 className="mb-4 font-semibold">{project.title}</h2>
-                  <p className="text-sm font-light text-muted-foreground">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-center gap-2 text-sm">
-                  <p>{new URL(project.link).host}</p>
-                  <ExternalLink className="size-4" />
-                </div>
-              </div>
-            </Link>
-          </li>
+          <ProjectCard key={project.id} project={project} />
         ))}
-      </ul>
-    </section>
-  );
+      </div>
+    </div>
+  )
 }
