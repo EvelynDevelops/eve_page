@@ -86,8 +86,15 @@ function ProjectCard({ project, expanded, setExpanded }: {
 
           {/* Footer */}
           <ExpandableCardFooter className="flex justify-start space-x-2">
-            <p>{new URL(project.link).host}</p>
-            <ExternalLink className="size-4" />
+            <a 
+              href={project.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-600 hover:text-black"
+            >
+              {new URL(project.link).host}
+            </a>
+            <ExternalLink className="text-gray-600 size-4" />
           </ExpandableCardFooter>
         </ExpandableCard>
       </ExpandableTrigger>

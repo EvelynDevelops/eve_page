@@ -116,7 +116,7 @@ export default function Home() {
 
 
       <div className="bg-white dark:bg-gray-900 text-black dark:text-white py-20 px-10">
-        <h1 className="text-4xl font-bold text-center mb-6 mt-4">Project Showcase</h1>
+        <h1 className="text-4xl font-bold text-center mb-10">My Projects</h1>
         <Projects/>
       </div>
 
