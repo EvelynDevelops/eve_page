@@ -20,7 +20,7 @@ const projects = [
     description: "My personal website showcasing my projects, skills, and experience.",
     details: "A fully responsive site built with Next.js and Tailwind CSS. Includes project showcases, blog posts, and contact form integrations.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "UI/UX Design"],
-    link: "https://evepage.com",
+    link: "https://github.com/EvelynDevelops/eve_page",
     image: "/images/eve_page.png",
   },
   {
