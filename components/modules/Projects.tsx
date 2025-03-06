@@ -9,7 +9,7 @@ import {
   ExpandableCardFooter,
   ExpandableContent,
   ExpandableTrigger,
-} from "@/components/ExpandableCard"
+} from "@/components/base/ExpandableCard"
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 

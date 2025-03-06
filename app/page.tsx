@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import Skills from "@/components/skills"
-import Projects from "@/components/Projects";
+import Projects from "@/components/modules/Projects";
 import { useMemo } from "react";
 import Image from "next/image";
+import TechStackCarousel from "@/components/modules/TechStackCarousel";
 
 
 export default function Home() {
@@ -107,15 +107,25 @@ export default function Home() {
             Ultimate frisbee teaches me teamwork, strategy, and adaptability—skills that seamlessly translate into my engineering mindset.
           </p>
         </div>
+      </div>
 
-        <div className="md:w-1/3 mt-16 ml-16">
-          {/* Skills */}
-          <Skills />
-        </div>
+      {/* tech stack showcase */}
+      <div className="flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white py-20 px-10">
+        <p className="text-center text-2xl font-extrabold text-gray-600 dark:text-gray-400 mb-3">
+            Fueled by Tech, Powered by Passion
+          </p>
+
+        <h1 className="text-6xl text-gray-800 font-bold text-center mb-10">
+          Tech Stack
+        </h1>
+
+        <TechStackCarousel/>
       </div>
 
 
-      <div className="bg-white dark:bg-gray-900 text-black dark:text-white py-20 px-10">
+
+
+      <div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 px-10">
         <h1 className="text-4xl font-bold text-center mb-10">My Projects</h1>
         <Projects/>
       </div>
