@@ -122,10 +122,7 @@ export default function Home() {
         <TechStackCarousel/>
       </div>
 
-
-
-
-      <div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 px-10">
+      <div className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 pb-48 px-10 min-h-screen">
         <h1 className="text-4xl font-bold text-center mb-10">My Projects</h1>
         <Projects/>
       </div>
