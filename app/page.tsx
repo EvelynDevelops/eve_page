@@ -111,12 +111,12 @@ export default function Home() {
 
       {/* tech stack showcase */}
       <div className="flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white py-20 px-10">
-        <p className="text-center text-lg text-gray-600 dark:text-gray-400 mb-6">
-            Explore the technologies that fuel my development journey.
+        <p className="text-center text-2xl font-extrabold text-gray-600 dark:text-gray-400 mb-3">
+            Fueled by Tech, Powered by Passion
           </p>
 
-        <h1 className="text-4xl font-bold text-center mb-10">
-          My Tech Stack: Powering Innovation
+        <h1 className="text-6xl text-gray-800 font-bold text-center mb-10">
+          Tech Stack
         </h1>
 
         <TechStackCarousel/>
