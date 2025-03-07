@@ -20,7 +20,7 @@ export default function RootLayout({
             <a href="#" className="font-semibold text-gray-700 hover:text-black">Home</a>
             <a href="#" className="font-semibold text-gray-700 hover:text-black">Blog</a>
             <a href="#" className="font-semibold text-gray-700 hover:text-black">Project</a>
-            <a href="#" className="font-semibold text-gray-700 hover:text-black">Contact</a>
+            <a href="/contact-me" className="font-semibold text-gray-700 hover:text-black">Contact</a>
           </div>
         </nav>
 
