@@ -17,7 +17,7 @@ export default function RootLayout({
         <nav className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md z-50 px-64 py-2 flex justify-between items-center">
           <h1 className="text-2xl font-bold">EVE</h1>
           <div className="flex space-x-8">
-            <a href="#" className="font-semibold text-gray-700 hover:text-black">Home</a>
+            <a href="/" className="font-semibold text-gray-700 hover:text-black">Home</a>
             <a href="#" className="font-semibold text-gray-700 hover:text-black">Blog</a>
             <a href="#" className="font-semibold text-gray-700 hover:text-black">Project</a>
             <a href="/contact-me" className="font-semibold text-gray-700 hover:text-black">Contact</a>
@@ -28,9 +28,10 @@ export default function RootLayout({
         <main className="flex-grow pt-16">{children}</main>
 
         {/* Footer (only visible at the bottom of the page) */}
-        <footer className="w-full bg-gray-900 text-white text-center py-4 mt-auto">
+        <footer className="left-0 bottom-0 w-full bg-white text-black text-center py-10 border-black z-50 py-2 mb-2">
+          <hr className="border-t border-gray-300 w-full mx-auto mb-4" />
           <p>© 2025 Evelyn. All rights reserved.</p>
-          <p>Made with love and 🫐</p>
+          <p>Made with love and 🥏</p>
         </footer>
       </body>
     </html>
