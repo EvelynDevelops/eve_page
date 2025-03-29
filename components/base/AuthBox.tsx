@@ -4,15 +4,25 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabaseClient'
 
-
 export default function AuthBox() {
   const [user, setUser] = useState<any>(null)
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user)
+      if (user) {
+        setUser(user)
+        syncUserProfile(user)
+      }
     })
   }, [])
+
+  const syncUserProfile = async (user: any) => {
+    await supabase.from('profiles').upsert({
+      id: user.id,
+      name: user.user_metadata.name,
+      avatar_url: user.user_metadata.avatar_url,
+    })
+  }
 
   const handleLogin = async () => {
     await supabase.auth.signInWithOAuth({
@@ -35,7 +45,7 @@ export default function AuthBox() {
         <img src={user.user_metadata.avatar_url} className="w-8 h-8 rounded-full" />
         <span className="text-sm text-gray-700 dark:text-gray-300">{user.user_metadata.name}</span>
       </div>
-  
+
       {/* rightside-logout */}
       <button
         onClick={handleLogout}
@@ -52,5 +62,4 @@ export default function AuthBox() {
       Login with GitHub
     </button>
   )
-  
 }
